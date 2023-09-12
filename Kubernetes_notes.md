@@ -44,3 +44,17 @@
     This mechanism has to be implemented under CCM. This is an open source entity where we can edit the code as per our cloud provider.
         *This component is NOT AT ALL required if we are running the kubernetes on our on-premise servers*.
         ![Alt text](image.png)
+
+5. Kubernetes Production Systems => Lifecycle of K8S, basically creation, upgradation, configuration and deletion of K8S cluster in production. Kubernetes Distribution => In general distribution basically means organizations taking any open source software and adding a wrapper class on top of it or adding some customisation on top of it, and making it available for their own customer. Ex:- AWS using the Kubernetes which is an open source software for it's own customers in the name of Elastic Kubernetes Service(EKS) after adding some extra customisation or wrapper classes to it. Any issues faces by customer while using EKS service will be solved by AWS only. In a similar way Kybernetes has a lot of popular distribution services.
+    Note:- MiniKube, K3S, kind, k3d, microk8s -> all of these are good for learning and exploring but they are not used on production, these are just merely developement/developer environments OR just local kubernetes clusters.
+
+6. On production systems we use the K8S distributed systems, some of the very popular distributed systems are as follows:-
+    a) Kubernetes itself => It's not a managed/distributed service so it doesn't give instant support. So they are best used in organizations at pre-prod level or in testing/staging level or in production environments for the enterprises/organizations which doesn't require any instant support.    
+    b) OpenShift         c) Rancher         d) Tanzo        e) EKS      f) AKS      g) GKE      h) DKE
+        Difference between K8S and EKS => If we deploy K8S cluster on an EC2 instance and there are any issues with the K8S config on that AWS won't support us in that as EC2 instance is an IAAS service, whereas if we use EKS which is a fully managed AWS service and we face any issues on that AWS will provide support.
+
+7. POD => Lowest level of deployment in K8S, we deploy a container as a pod in K8S. It's similar to docker container but the only difference here is that in case of Docker we give the commands related to the container on a command line whereas in K8S we provide all of the commands in the "pod.yaml" file. A pod can have single or multiple container. The use of YAML files is because K8S is a Enterprise level platform and it wants to bring in declarative capabilities/standardization, so everything in K8S is written on YAML files only.
+
+8. Pod is mostly a single container but in some cases(rare cases) we have some side-car containers, init-containers which supports the actual container. Ex:- Actual container reading some config or some other data related contents from the side container, in that case we can deploy them in the same pod. Advantages of using multi-container in a single pod => a) Shared Networking        b) Shared Storage. So the containers in the single pod can talk to each other using localhost.
+
+
