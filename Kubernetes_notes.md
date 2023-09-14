@@ -61,3 +61,6 @@
 
 10. Kubectl => Similar to Docker ClI, basically a command line for K8S so we can directly interact with the K8S clusters.
     Minikube => CLI tool that will allow us to create a K8S cluster locally, alternatives are => K3S, kind, microk8s.
+
+11. Service in K8S ==>
+    
